@@ -1,10 +1,12 @@
 import Image from 'next/image'
-import { NavBar } from './components'
+import { NavBar, CarCard } from './components'
+
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <NavBar />
+      <CarCard />
     </main>
   )
 }
