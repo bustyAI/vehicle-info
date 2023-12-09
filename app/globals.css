@@ -6,3 +6,34 @@
 body{
   background-color: white;
 }
+
+/* Navbar styles */
+
+.navbar {
+  @apply flex flex-row justify-between items-center mx-14
+}
+
+.navbar__right {
+  @apply flex-row space-x-8
+}
+
+/* END */
+
+/* Card styles */
+.card__container {
+  @apply flex flex-row justify-between items-center
+}
+
+.card__image_container {
+  @apply flex flex-col relative
+}
+
+.battery__icon {
+  @apply absolute bottom-12 ml-28 opacity-100 font-semibold text-white 
+}
+
+.charge__status {
+  @apply flex absolute z-0 h-[200px] w-[350px] bottom-0
+}
+
+/* END */

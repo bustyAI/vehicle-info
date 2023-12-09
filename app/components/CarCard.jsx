@@ -1,17 +1,31 @@
+"use client"
 import React from 'react'
+import { ChargeStatus } from '.'
 import {
     Card, CardActions, CardContent, CardMedia, Typography,
     TextField,
 } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'
-import { Percent, AccountCircle } from '@mui/icons-material'
+import { Percent, Battery1Bar, BatteryChargingFull } from '@mui/icons-material'
+import { useState } from 'react'
 
 const CarCard = () => {
+
+    const [isCharged, setIsCharged] = useState();
+
+    function handleChange(event) {
+        if (event.target.value >= 90 && event.target.value <= 100) {
+            setIsCharged(true)
+        }
+        else if (event.target.value >= 0 && event.target.value < 90) {
+            setIsCharged(false)
+        }
+    }
     return (
         <Card variant='outlined' className='mx-auto' sx={{ width: 3 / 4, boxShadow: 3 }}>
-            <div className='flex flex-row justify-between items-center'>
-                <div className='flex flex-col relative'>
-                    <CardContent>
+            <div className='card__container'>
+                <div className='card__image_container'>
+                    <CardContent className='mx-auto'>
                         <Typography variant='h4' component='div'>
                             Rivian 1
                         </Typography>
@@ -20,14 +34,16 @@ const CarCard = () => {
                         sx={{ height: 200, width: 350 }}
                         image='rivian.png'
                         title="rivian"
+                        alt="Rivian"
                     />
-                    <div className='flex absolute z-0 bg-green-500 h-[200px] w-[350px] bottom-0 opacity-60' ></div>
-                    <p className='absolute bottom-12 right-8 opacity-100 font-semibold text-white text-[70px] '>
-                        Charged
-                    </p>
+                    {isCharged ? <ChargeStatus key='charged' cardColor={'bg-green-500'} /> : <ChargeStatus key='notCharged' cardColor={'bg-red-500'} />}
+                    {isCharged ? <BatteryChargingFull sx={{ fontSize: 115 }} className='battery__icon'>
+
+                    </BatteryChargingFull> : <Battery1Bar className='battery__icon' sx={{ fontSize: 115 }} />}
                 </div>
                 <CardActions>
                     <TextField
+                        onChange={handleChange}
                         className='mx-4 mt-8'
                         color='primary'
                         id="percentage-filled"

@@ -7,11 +7,11 @@ import IconButton from '@mui/material/IconButton'
 
 const NavBar = () => {
     return (
-        <nav className='flex flex-row justify-between items-center mx-14'>
+        <nav className='navbar'>
             <div className='flex'>
                 <Image src='/ready2go.jpg' width={150} height={150} />
             </div>
-            <div className='flex-row space-x-8'>
+            <div className='navbar__right'>
                 <Button className='bg-blue-500 text-xl' color='primary' size='large' variant='contained'>
                     Login
                 </Button>
