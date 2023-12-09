@@ -46,7 +46,7 @@ const CarCard = ({ name }) => {
                         onChange={handleChange}
                         className='mx-4 mt-8'
                         color='primary'
-                        id="percentage-filled"
+                        id={name}
                         variant="outlined"
                         label="Percentage"
                         margin='normal'

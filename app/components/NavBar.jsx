@@ -9,7 +9,7 @@ const NavBar = () => {
     return (
         <nav className='navbar'>
             <div className='flex'>
-                <Image src='/ready2go.jpg' width={150} height={150} />
+                <Image alt='ready2go' src='/ready2go.jpg' width={150} height={150} />
             </div>
             <div className='navbar__right'>
                 <Button className='bg-red-500 text-xl' color='error' size='large' variant='contained'>
