@@ -9,7 +9,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import { Percent, Battery1Bar, BatteryChargingFull } from '@mui/icons-material'
 import { useState } from 'react'
 
-const CarCard = () => {
+const CarCard = ({ name }) => {
 
     const [isCharged, setIsCharged] = useState();
 
@@ -22,12 +22,12 @@ const CarCard = () => {
         }
     }
     return (
-        <Card variant='outlined' className='mx-auto' sx={{ width: 3 / 4, boxShadow: 3 }}>
+        <Card variant='outlined' className='mx-auto my-8' sx={{ width: 3 / 4, boxShadow: 3 }}>
             <div className='card__container'>
                 <div className='card__image_container'>
                     <CardContent className='mx-auto'>
                         <Typography variant='h4' component='div'>
-                            Rivian 1
+                            {name}
                         </Typography>
                     </CardContent>
                     <CardMedia

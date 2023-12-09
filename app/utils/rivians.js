@@ -1,10 +1,6 @@
-const rivianObjects = {}
+const rivians = Array.from({ length: 18 }, (_, index) => ({
+    id: index + 1,
+    name: `Rivian ${index + 1}`,
+}))
 
-for (let i = 1; i <= 18; i++) {
-    const rivianName = `Rivian ${i}`;
-    rivianObjects[rivianName] = i
-}
-
-console.log(rivianObjects);
-
-export default rivianObjects
+export default rivians

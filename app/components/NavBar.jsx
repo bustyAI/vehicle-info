@@ -12,9 +12,6 @@ const NavBar = () => {
                 <Image src='/ready2go.jpg' width={150} height={150} />
             </div>
             <div className='navbar__right'>
-                <Button className='bg-blue-500 text-xl' color='primary' size='large' variant='contained'>
-                    Login
-                </Button>
                 <Button className='bg-red-500 text-xl' color='error' size='large' variant='contained'>
                     Logout
                 </Button>
